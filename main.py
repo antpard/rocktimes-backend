@@ -1,8 +1,8 @@
+import typing
 import strawberry
 from fastapi import FastAPI
-from strawberry.asgi import GraphQL
+from strawberry.fastapi import GraphQLRouter
 import datetime
-import typing
 
 
 @strawberry.type
@@ -11,14 +11,18 @@ class Event:
     description: str
     datetime: datetime.datetime
 
-
-def get_events() -> typing.List[Event]:
+def get_events():
     return [
-            Event(
-                title="Event 1",
-                description="Description 1",
-                datetime=datetime.datetime.now(),
-            ),
+        Event(
+            title="Event 1",
+            description="Description 1",
+            datetime=datetime.datetime.now(),
+        ),
+        Event(
+            title="Event 2",
+            description="Description 2",
+            datetime=datetime.datetime.now(),
+        ),
     ]
 
 @strawberry.type
@@ -26,11 +30,8 @@ class Query:
     events: typing.List[Event] = strawberry.field(resolver=get_events)
 
 
-schema = strawberry.Schema(query=Query)
-graphql_app = GraphQL(schema)
+schema = strawberry.Schema(Query)
+graphql_app = GraphQLRouter(schema)
 
 app = FastAPI()
-app.add_route("/graphql", graphql_app)
-app.add_websocket_route("/graphql", graphql_app)
-
-
+app.include_router(graphql_app, prefix="/graphql")
