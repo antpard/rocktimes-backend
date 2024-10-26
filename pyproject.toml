@@ -1,8 +1,10 @@
 [project]
-name = "rocktimes"
+name = "rocktimes-backend"
 version = "0.1.0"
-description = "Rocktimes Backend"
+description = "Rocktimes GraphQL Backend"
 readme = "README.md"
+authors = [{ name = "Spluca", email = "hello@spluca.org" }]
+license = "MIT"
 requires-python = ">=3.12"
 dependencies = [
     "fastapi[standard]>=0.115.3",
