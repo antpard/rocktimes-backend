@@ -1,7 +1,9 @@
 import strawberry
 from typing import List
-from models import Event, User
+from models.event_model import Event
+from models.user_model import User
 from datetime import datetime
+
 
 @strawberry.type
 class EventMutation:
@@ -25,3 +27,11 @@ class EventMutation:
                 ends_at=datetime.now(),
             ),
         ]
+
+
+def get_user() -> User:
+    return User(
+        email="user1@example.com",
+        name="User 1",
+        created_at=datetime.now(),
+    )
