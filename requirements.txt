@@ -1,0 +1,10 @@
+dagger-io>=0.13.6
+fastapi[standard]>=0.115.3
+opentelemetry-distro>=0.48b0
+opentelemetry-exporter-otlp>=1.27.0
+pip>=24.3
+pytest>=8.3.3
+python-dotenv>=1.0.1
+sqlmodel>=0.0.22
+strawberry-graphql[debug-server,fastapi]>=0.247.0
+uvicorn[standard]>=0.32.0
