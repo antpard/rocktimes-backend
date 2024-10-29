@@ -5,7 +5,7 @@ from dagger import dag, function, object_type
 
 
 @object_type
-class HelloDagger:
+class HelloRokctimes:
     @function
     async def publish(self, source: dagger.Directory) -> str:
         """Publish the application container after building and testing it on-the-fly"""

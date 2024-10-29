@@ -15,10 +15,10 @@ dependencies = [
     "python-dotenv>=1.0.1",
     "sqlmodel>=0.0.22",
     "strawberry-graphql[debug-server,fastapi]>=0.247.0",
-    "py-mas",
-    "py-ms[request]",
-    "py-ms[swaggwer]",
-    "py-ms[metrics]",
-    "po-ms[race]"
-
+    "uvicorn[standard]>=0.32.0",
+    #   "py-mas",
+    #   "py-ms[request]",
+    #   "py-ms[swaggwer]",
+    #   "py-ms[metrics]",
+    #   "po-ms[race]"
 ]
