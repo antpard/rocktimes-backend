@@ -13,7 +13,7 @@ class TestEvents(unittest.TestCase):
             title="Test Event",
             description="This is a test event",
             url="https://test.com",
-            image="https://test.com/image.jpg"
+            image="https://test.com/image.jpg",
             starts_at="2021-09-01T00:00:00",
             ends_at="2021-09-01T00:00:00"
         )
